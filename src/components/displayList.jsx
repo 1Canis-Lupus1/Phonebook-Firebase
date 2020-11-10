@@ -41,7 +41,9 @@ export const Contact = () => {
   };
 
   const removeContactDetails = (id) => {
-    if (window.confirm("Delete PhoneBook Entry?")) {
+    const val = window.confirm("Delete Current Phonebook Entry?");
+    console.log(val);
+    if (val) {
       myFirebaseDB.child(`phonebookEntry/${id}`).remove((err) => {
         if (err) {
           console.log(err);

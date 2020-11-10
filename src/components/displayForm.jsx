@@ -106,7 +106,7 @@ export class DisplayForm extends Component {
           console.log("Contact Type:", entry);
           if (isTrue.contactType) {
             if (entry.contactType === "default") {
-              errors.contactType = "*Select the contact type";
+              errors.contactType = "*Select the type of contact";
             } else {
               delete errors[each];
               isTrue.contactType = false;
@@ -123,6 +123,9 @@ export class DisplayForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    if (!e.target.value) {
+      alert("PhoneBook Fields Empty");
+    }
     let isTrue = {
       contactName: true,
       phone: true,
@@ -164,13 +167,14 @@ export class DisplayForm extends Component {
         <Form onSubmit={this.handleSubmit}>
           <FormGroup
             style={{
-              fontSize: "25px",
               backgroundColor: "orange",
               color: "darkblue",
               padding: "5px",
             }}
           >
-            <Label for="contactName">Contact Name</Label>
+            <Label for="contactName" style={{ fontSize: "25px" }}>
+              Contact Name
+            </Label>
             <Input
               type="text"
               name="contactName"
@@ -178,17 +182,22 @@ export class DisplayForm extends Component {
               value={entry.contactName}
               onChange={(e) => this.handleChange("contactName", e.target.value)}
             />
-            {errors && <p style={{ color: "red" }}>{errors.contactName}</p>}
+            {errors && (
+              <small style={{ color: "red", fontSize: "1px" }}>
+                {errors.contactName}
+              </small>
+            )}
           </FormGroup>
           <FormGroup
             style={{
-              fontSize: "25px",
               backgroundColor: "green",
               color: "white",
               padding: "5px",
             }}
           >
-            <Label for="phone">Contact Number</Label>
+            <Label for="phone" style={{ fontSize: "25px" }}>
+              Contact Number
+            </Label>
             <Input
               type="number"
               name="phone"
@@ -200,13 +209,14 @@ export class DisplayForm extends Component {
           </FormGroup>
           <FormGroup
             style={{
-              fontSize: "25px",
               backgroundColor: "yellow",
               color: "darkblue",
               padding: "5px",
             }}
           >
-            <Label for="email">Email</Label>
+            <Label for="email" style={{ fontSize: "25px" }}>
+              Email
+            </Label>
             <Input
               type="email"
               name="email"
@@ -218,13 +228,14 @@ export class DisplayForm extends Component {
           </FormGroup>
           <FormGroup
             style={{
-              fontSize: "25px",
               backgroundColor: "pink",
               color: "darkblue",
               padding: "5px",
             }}
           >
-            <Label for="contactType">Contact Type</Label>
+            <Label for="contactType" style={{ fontSize: "25px" }}>
+              Contact Type
+            </Label>
             <Input
               type="select"
               name="contactType"
