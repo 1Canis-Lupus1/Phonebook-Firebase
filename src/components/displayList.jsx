@@ -73,16 +73,41 @@ export const Contact = () => {
           <table style={{ padding: "5px" }}>
             <thead>
               <tr style={{ border: "1px solid black" }}>
-                <th style={{ border: "1px solid black", padding: "5px" }}>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    padding: "5px",
+                    background: "orange",
+                  }}
+                >
                   <strong>Contact Name</strong>
                 </th>
-                <th style={{ border: "1px solid black", padding: "5px" }}>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    padding: "5px",
+                    background: "green",
+                    color: "white",
+                  }}
+                >
                   <strong>Contact Number</strong>
                 </th>
-                <th style={{ border: "1px solid black", padding: "5px" }}>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    padding: "5px",
+                    background: "yellow",
+                  }}
+                >
                   <strong>Email</strong>
                 </th>
-                <th style={{ border: "1px solid black", padding: "5px" }}>
+                <th
+                  style={{
+                    border: "1px solid black",
+                    padding: "5px",
+                    background: "pink",
+                  }}
+                >
                   <strong>Contact Type</strong>
                 </th>
               </tr>
